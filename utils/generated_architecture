@@ -1,0 +1,15 @@
+digraph "Web App Infra on AWS" {
+	graph [fontcolor="#2D3436" fontname="Sans-Serif" fontsize=15 label="Web App Infra on AWS" nodesep=0.60 pad=2.0 rankdir=LR ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	"0fd60b9019e040e18e867f1b87f29302" -> c542c361e65141f0910a78c3f2b4e48e [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	c542c361e65141f0910a78c3f2b4e48e -> "614392b9f92c47f4b24d288ac1428760" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"614392b9f92c47f4b24d288ac1428760" -> d0eb1961aee84f588d9d651b6fad5707 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	subgraph cluster_VPC {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label=VPC labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		c542c361e65141f0910a78c3f2b4e48e [label=ALB height=1.9 image="/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/resources/aws/network/elastic-load-balancing.png" shape=none]
+		"0fd60b9019e040e18e867f1b87f29302" [label="React App" height=1.9 image="/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/resources/aws/storage/simple-storage-service-s3.png" shape=none]
+		"614392b9f92c47f4b24d288ac1428760" [label="Node.js App" height=1.9 image="/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/resources/aws/compute/ec2.png" shape=none]
+		d0eb1961aee84f588d9d651b6fad5707 [label=PostgreSQL height=1.9 image="/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/resources/aws/database/rds.png" shape=none]
+	}
+}
